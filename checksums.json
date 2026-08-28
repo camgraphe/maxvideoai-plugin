@@ -1,0 +1,23 @@
+{
+  "algorithm": "sha256",
+  "files": {
+    ".claude-plugin/marketplace.json": "2bc32c48e0ed97c727b68cac1fef502a2907498c1afa41c837b6c32960fe7dcc",
+    ".claude-plugin/plugin.json": "bc749fc9d7ccf09d2f77fac4474aab29a3140123b07e94134934f9d0e83b42ac",
+    ".codex-plugin/plugin.json": "4f747973e7e9517aea5bedd54379efd569ece9e1971218133e865f4a2ae89288",
+    ".mcp.json": "74c41d7b8f48e732ce4bae75539a4757528f667d1e803c25e1c99b377b3a02e8",
+    "CHANGELOG.md": "9d016dd79a90ddd31eaed20aa9c6f15beea74dca20d47c1e7b1296e459c3c6a4",
+    "LICENSE": "5cc3b27c5a8396957519a026841dd06bc2ca47f5efba0961b98bd2a53bd9c285",
+    "README.md": "f3efba669630f2e7e277c25b39a3aa0431eb2c6c6456dbc2de44eb6a39784486",
+    "SECURITY.md": "b1901fd5979d1f62e8694304aaa761d0a1890a9bb71b54622724eac9570a4852",
+    "VERSION": "d915cc95d6ca8f47ae297713ed46d4e5c5d99ddd29fc3c61e263bdf305f2b5b0",
+    "assets/logo-mark.svg": "42b5247999993eb56effaf768fc51f59a2d82c5382f1b7f2b8e4963cd5e8bc91",
+    "scripts/import-reference-files.mjs": "6a8792012ffc0445b2c37d8e94c61b56f773006e7e911ba84ff2660bd02f7c33",
+    "skills/generate/SKILL.md": "b21d4b23511a476227e910dfe065a8e92ccc528ec7643b1800e0283d1e96fa81",
+    "skills/generate/agents/openai.yaml": "ec5b47ada8f520e2b21000d4a3447ba4303d62b463692c64ee37b5655c4f57d2",
+    "skills/generate/references/generation-safety.md": "fb005d24703b8e4711d35594f17b201695d824278c6e1d6d1eeca3b1c4508601",
+    "skills/generate/references/reference-inputs.md": "8db90215fa7da3c6fda226d05cd703f17478cb13d2055a91f05ea49a68233e2f",
+    "skills/plan/SKILL.md": "bbe2f9aa6965f0781a78c29143badeb0373f827de6c12622f2ac8119c6b73a97",
+    "skills/plan/agents/openai.yaml": "ebdc5cf67606b6a2c249a95ef6e7f969f5f7d3032c16de64afdfd628ae07c47a",
+    "skills/plan/references/budget-planning.md": "97a76901865ffef2f7985e0fb232c330e8c7c94751b282a07c2cd31c1b43f2b7"
+  }
+}
