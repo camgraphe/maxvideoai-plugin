@@ -1,102 +1,138 @@
-# MaxVideoAI for ChatGPT, Claude, and Codex
+# MaxVideoAI for Claude, ChatGPT or Codex
 
-Plan and generate from ChatGPT, Claude, or Codex. Your assistant can develop the
-creative brief, prompts, shot plan, and reference ideas for AI video or images
-while MaxVideoAI provides current model facts, comparable project budgets, exact
-quotes, generation, and job recovery.
+MaxVideoAI is a multi-model AI video production service exposed through a remote MCP server and packaged for agent workflows. It gives Claude, ChatGPT and Codex one production path for comparing current model options, budgeting shots, preparing exact quotes, approving one paid attempt and recovering finished work in the connected MaxVideoAI Library.
 
-In product language, MaxVideoAI is a ChatGPT app, a connector for Claude, and a
-plugin for Codex. The remote MCP server is the shared technical connection.
+**Plan. Compare. Price. Approve. Generate. Recover.**
 
-## What it can do
+Setup guides: [Claude](docs/claude.md) · [ChatGPT](docs/chatgpt.md) · [Codex](docs/codex.md) — see [current compatibility and protocol details](https://maxvideoai.com/docs/mcp).
 
-- Recommend the strongest currently executable model for each shot and explain
-  credible lower-cost alternatives.
-- Budget a complete film with one model or a deliberate shot-by-shot mix.
-- Validate prompts, settings, and private image, video, or audio references.
-- Import private host attachments and compatible generated results directly as
-  reusable MaxVideoAI assets, including ordered batches of up to eight files.
-- Use a reviewed official provider prompting guide when one is available for
-  the selected model, while keeping MaxVideoAI live details authoritative.
-- Show the exact price and wait for explicit approval before generation.
-- Track a job, present compatible results in the conversation, and recover
-  completed or refunded outcomes without creating duplicate paid work.
+![MaxVideoAI MCP page presenting Claude, ChatGPT, and Codex as equal paths beside a production-planning conversation](assets/screenshots/maxvideoai-assistant-workflow-live.webp)
 
-## Workflow skills
+[Plan a production](https://maxvideoai.com/mcp?utm_source=github&utm_medium=repository&utm_campaign=assistant_video_plugin&utm_content=hero_connect) · [Compare models](https://maxvideoai.com/models) · [Review pricing](https://maxvideoai.com/pricing?utm_source=github&utm_medium=repository&utm_campaign=assistant_video_plugin&utm_content=pricing)
 
-- **`plan`** turns a creative brief into a live model shortlist and
-  comparable, named project budgets. It is for deciding what to make and how
-  to allocate a multi-shot production before requesting a paid quote.
-- **`generate`** handles a concrete image or video request from
-  references through an exact quote, explicit approval, generation, result
-  presentation, and recovery. It also handles account credit and top-up
-  handoffs without exposing payment details to the conversation.
-
-The skills are split by user outcome, not by internal tool calls. Reference
-selection stays inside the generation workflow because it is an input to a
-result, not a separate customer job.
-
-Claude Code exposes these workflows as `/maxvideoai:plan` and
-`/maxvideoai:generate`. Claude can also route to them from a natural-language
-request. Codex discovers the same two skills from the installed plugin.
-
-## Private reference imports
-
-The generation skill chooses the shortest private path the current host can
-actually complete:
-
-- ChatGPT can pass user-authorized attachments or compatible generated file
-  results directly to MaxVideoAI. The returned private asset IDs are ready for
-  the quote without re-listing the library.
-- Compatible ChatGPT or Claude surfaces can render the short-lived in-chat
-  importer and accept up to eight files. The browser handoff remains available
-  when the host cannot render the app.
-- Codex and Claude Code can create one short-lived handoff per local file and
-  run the packaged local helper. The helper reads each file locally and sends
-  only its bytes and base filename to MaxVideoAI.
-
-These paths work without a public URL or Computer Use. Private source files
-remain in the connected MaxVideoAI library, and temporary upload links are
-single-use and expire automatically.
-
-## Install in Codex
-
-Use the reviewed release tag so the marketplace definition, skills, and MCP
-connection stay on the same version:
+### Install the repository-validated Codex package
 
 ```sh
-codex plugin marketplace add camgraphe/MaxVideoAi --ref maxvideoai-plugin-v0.3.1
+codex plugin marketplace add camgraphe/MaxVideoAi --ref maxvideoai-plugin-v0.3.2
 codex plugin add maxvideoai@maxvideoai
 ```
 
-Start a new Codex conversation after installation. Ask with `$maxvideoai:plan`
-to compare models or `$maxvideoai:generate` for a concrete request. The first
-live MaxVideoAI action opens OAuth so you can sign in or create the account you
-want to connect.
+Start a new Codex task, then ask `$maxvideoai:plan` to compare a production route or `$maxvideoai:generate` to prepare a concrete request. The plugin is free to connect. The first live MaxVideoAI action opens OAuth so you can sign in or create the account you want to connect.
+
+Public release: [v0.3.1](https://github.com/camgraphe/maxvideoai-plugin/releases/tag/v0.3.1). Checked-in source candidate: `0.3.2`.
+
+## What does MaxVideoAI add to an AI assistant?
+
+The assistant owns the creative conversation; MaxVideoAI supplies current product truth and the controlled execution path. It can read live model details, compare compatible options, calculate complete project budgets, select account-owned media, validate concrete settings, return an exact quote, submit one approved attempt, follow the accepted job, and present the finished result.
+
+![Current MaxVideoAI workspace with Seedance 2.5, a storyboard-ready prompt, generation controls, and varied sample renders](assets/screenshots/maxvideoai-workspace-live.webp)
+
+The same connected account and Library are used on the website and through the plugin. There is no separate plugin subscription; approved generations use existing MaxVideoAI credits at current pay-as-you-go prices.
+
+## Which setup should you use?
+
+- **Claude:** add the remote connector/plugin, complete OAuth, then begin with a no-spend plan. Follow the [Claude guide](docs/claude.md).
+- **ChatGPT:** install the shared plugin when it is available in the public directory, or use the documented developer MCP fallback. Follow the [ChatGPT guide](docs/chatgpt.md).
+- **Codex:** install the tagged source package, open a new task, and call `$maxvideoai:plan` or `$maxvideoai:generate`. Follow the [Codex guide](docs/codex.md).
+- **Another MCP client:** connect only if the client supports remote Streamable HTTP and OAuth. Follow the [generic MCP guide](docs/generic-mcp.md).
+
+Every route connects to `https://api.maxvideoai.com/mcp`. Add that URL exactly as written—without a token, query string, password, or API key.
+
+```text
+Connect → OAuth on first use → plan without spending → prepare quote → approve once → recover result
+```
+
+## What can you create?
+
+Start from a brief, a supported private reference, or a public example. The plugin can help turn that material into a shot plan and a model-aware request, while the MaxVideoAI gallery gives you concrete prompts, settings, durations, and recorded render costs to inspect before building your own version.
+
+![MaxVideoAI examples gallery with distinct cinematic rescue, animated character, and product-style AI video outputs](assets/screenshots/maxvideoai-examples-gallery-live.webp)
+
+[Explore AI video examples](https://maxvideoai.com/examples) or copy one of the [four practical agent workflows](examples/README.md).
+
+## How do you compare models side by side?
+
+Use `$maxvideoai:plan` in Codex or `/maxvideoai:plan` in Claude Code. Planning reads current model facts and builds comparable, named production routes without authorizing generation. Ask for one consistent-model route, a deliberate model mix, a quality-focused plan, or a credible lower-cost alternative using the same shot assumptions.
+
+![MaxVideoAI side-by-side comparison of Seedance 2.0 and Google Veo 3.1 with editorial scores and supported workflows](assets/screenshots/maxvideoai-engine-scoreboard-live.webp)
+
+The [engine comparison hub](https://maxvideoai.com/ai-video-engines) and [model directory](https://maxvideoai.com/models) expose the current decision surface. A recommendation is a capability match for the brief, not a guarantee of provider availability or a paid quote.
+
+## How do pricing and approval stay clear?
+
+A project budget is useful while you are choosing a direction. When the model, prompt, settings, and required references are concrete, `$maxvideoai:generate` or `/maxvideoai:generate` prepares the exact price for that request. Nothing is submitted as paid work until you explicitly approve that quote, and the approval covers one attempt.
+
+![MaxVideoAI pricing comparison with current video scenarios, price examples, and navigation for image, audio, and production tools](assets/screenshots/maxvideoai-pricing-comparison-live.webp)
+
+1. **Plan:** compare current model options and complete project budgets without spending credits.
+2. **Prepare:** validate the selected request and supported private references.
+3. **Price:** receive the exact quote for those settings.
+4. **Approve:** explicitly authorize one paid attempt.
+5. **Recover:** follow the accepted job before considering another submission.
+
+## How do private references and the Library work?
+
+Compatible ChatGPT or Claude surfaces can import authorized attachments and generated results as private MaxVideoAI assets without a public URL or Computer Use. Codex and Claude Code use the packaged local helper when a host cannot expose a temporary file handle directly. The helper reads local bytes itself; it does not publish the file or pass a raw local path to the MCP server.
+
+![MaxVideoAI production Library with saved videos, media filters, and a reusable completed result](assets/screenshots/maxvideoai-library-continuity-production.jpg)
+
+Private references and finished generations remain in the connected MaxVideoAI Library. If a response is interrupted after submission, recover the accepted job or recent generation before preparing another paid attempt. Read [privacy and permissions](docs/privacy-and-permissions.md) and [reference input handling](skills/generate/references/reference-inputs.md) for the complete boundary.
+
+[Open the MaxVideoAI Library](https://maxvideoai.com/app/library?utm_source=github&utm_medium=repository&utm_campaign=assistant_video_plugin&utm_content=library) to continue with saved results and private media.
 
 ## Try asking
 
-- “Compare the best current models for a cinematic product reveal.”
-- “Build two comparable budgets for a 30-second launch film.”
-- “Plan a quality-first version and a lower-cost alternative.”
-- “Use my existing product image as the first frame of a video.”
-- “Give me the exact quote, but do not generate until I approve it.”
-- “Show me the status of my latest generation.”
-- “Recover the job if the previous response was interrupted.”
-- “Present the completed result in this conversation.”
+```text
+Compare current AI video models for a 20-second product film. Give me a
+quality-focused route and a credible lower-cost route using the same shot
+assumptions. Do not prepare paid work yet.
 
-## Account and credits
+Use my authorized product image as the first frame where the selected workflow
+supports it. Prepare the exact quote, but wait for my explicit approval.
 
-MaxVideoAI is free to connect and has no separate plugin subscription. Sign in or create a MaxVideoAI account during setup. Model advice and project budgets do not spend credits; approved generations use your existing MaxVideoAI credits on a pay-as-you-go basis.
+The conversation stopped after approval. Check the accepted job before you
+consider another paid submission, then recover the result in my MaxVideoAI Library.
+```
 
-Private references and completed generations remain in the same MaxVideoAI
-Library as the website. If more credits are needed, the assistant returns a
-secure MaxVideoAI top-up destination. Payment always happens on MaxVideoAI.
+More workflows:
 
-## Current product data
+- [Compare current AI video models](examples/compare-ai-video-models.md)
+- [Price an AI video project](examples/price-a-video-project.md)
+- [Plan a Claude production](examples/claude-video-production.md)
+- [Run a Codex production workflow](examples/codex-video-production.md)
 
-The package contains no copied model catalogue or static pricing. Live tools
-remain authoritative as models, capabilities, availability, and prices change.
+## How is the plugin packaged?
 
-Learn more in the [MaxVideoAI for ChatGPT and Claude](https://maxvideoai.com/mcp)
-overview and the [connection guide](https://maxvideoai.com/docs/mcp).
+The repository is deliberately reviewable. It contains host manifests, one remote MCP endpoint, two scoped skills, human setup guides, producer examples, community files, release graphics, and a deterministic public-bundle builder.
+
+```text
+.mcp.json                         remote MCP connection
+.claude-plugin/                   Claude package metadata
+.codex-plugin/                    Codex package metadata
+skills/plan/                      model comparison and project budgeting
+skills/generate/                  quote, approval, execution and recovery
+docs/                             host setup, privacy and troubleshooting
+examples/                         copyable production workflows
+scripts/import-reference-files.mjs local private-file helper
+```
+
+The MCP server uses OAuth and keeps pricing, account data, private media, jobs, and provider execution on the MaxVideoAI side. The host keeps the creative conversation and prompt development. Read [how it works](docs/how-it-works.md) for the complete division of responsibility.
+
+## How do you validate a contribution or release?
+
+From the source repository root:
+
+```bash
+pnpm github:content:check
+pnpm github:assets:release-check
+node --test --import tsx tests/github-content-contract.test.ts
+node --test --import tsx tests/mcp-public-release-bundle.test.ts
+```
+
+The release builder exports an exact allowlisted file set, validates every referenced image against the asset manifest, rejects secrets and unsafe paths, writes SHA-256 checksums, and produces the versioned archive used by the dedicated public repository.
+
+See [CONTRIBUTING.md](CONTRIBUTING.md) for review scope, [SECURITY.md](SECURITY.md) for private vulnerability reporting, and [SUPPORT.md](SUPPORT.md) for product and compatibility help.
+
+Policies and product help: [privacy](https://maxvideoai.com/legal/privacy) · [terms](https://maxvideoai.com/legal/terms) · [contact](https://maxvideoai.com/contact) · [support@maxvideoai.com](mailto:support@maxvideoai.com) · [Business Source License 1.1](LICENSE).
+
+Last reviewed: 2026-08-29.
