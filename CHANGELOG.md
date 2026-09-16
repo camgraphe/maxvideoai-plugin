@@ -1,5 +1,30 @@
 # Changelog
 
+## 0.3.5 — 2026-09-16
+
+- Supersede the cancelled 0.3.4 publication candidate with corrected proof
+  captions in all seven remaining guide and example consumers.
+- Describe the public homepage and Claude-result composite without claiming a
+  model selector or matching videos in workspace and Library screens.
+- Preserve host-specific evidence limits and the existing colorful product
+  captures; omit a version-specific release card from the current bundle.
+
+## 0.3.4 — 2026-09-16
+
+Publication cancelled: the immutable source tag `maxvideoai-plugin-v0.3.4`
+was created, but evidence-copy review failed before public repository release
+or Official MCP Registry publication. Version 0.3.5 supersedes this candidate.
+The 0.3.4 source tag must never be moved, deleted, or released.
+
+- Refresh both GitHub product stories against the redesigned public MaxVideoAI
+  site with seven distinct production captures on light, colorful surfaces.
+- Add the live OpenClaw and tested self-hosted n8n paths while keeping their
+  host, package, store, and automation limits explicit.
+- Cover the current production toolbox and newer model-comparison surface
+  without embedding a stale model list or price table in the plugin.
+- State the live video/image MCP boundary explicitly while keeping Audio
+  generation and Studio montage described as server-gated, not live features.
+
 ## 0.3.3 — 2026-08-29
 
 - Point the Codex installation path at the focused public plugin repository and
